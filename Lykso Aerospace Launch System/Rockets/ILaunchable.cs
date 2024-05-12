@@ -2,8 +2,8 @@
 
 public interface ILaunchable
 {
-    private void PrelaunchUnit(){}
-    private void LaunchUnit(){}
-    private void AscentUnit(){}
-    private void OrbitalUnit(){}
+    protected void PrelaunchUnit();
+    protected void LaunchUnit();
+    protected void AscentUnit();
+    protected void OrbitalUnit();
 }
