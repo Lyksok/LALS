@@ -1,14 +1,9 @@
-﻿using KRPC.Client.Services.KRPC;
-using Lykso_Aerospace_Launch_System;
-using Lykso_Aerospace_Launch_System.Prelaunch;
+﻿using Lykso_Aerospace_Launch_System;
 using Lykso_Aerospace_Launch_System.Rockets;
 
-// KrpcConnection conn = new KrpcConnection();
-//
-// Rocket rocket = new WacCorporalBoosted(conn);
-//
-// conn.Dispose();
+WacCorporalBoosted rocket = new WacCorporalBoosted(new KrpcConnection());
 
-var cd = new Countdown(10);
-
-cd.Start();
+rocket.PrelaunchUnit();
+rocket.LaunchUnit();
+rocket.AscentUnit();
+rocket.OrbitalUnit();
