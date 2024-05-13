@@ -6,4 +6,6 @@ public interface ILaunchable
     protected void LaunchUnit();
     protected void AscentUnit();
     protected void OrbitalUnit();
+
+    public void StartProcedure();
 }

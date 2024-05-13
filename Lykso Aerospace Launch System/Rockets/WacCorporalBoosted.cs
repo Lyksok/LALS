@@ -1,4 +1,5 @@
 ﻿using Lykso_Aerospace_Launch_System.Prelaunch;
+using Lykso_Aerospace_Launch_System.Snippets;
 
 namespace Lykso_Aerospace_Launch_System.Rockets;
 
@@ -13,13 +14,13 @@ public class WacCorporalBoosted : Rocket,ILaunchable
 
     public void PrelaunchUnit()
     {
-        ActVessel.Control.Throttle = 1;
+        new Throttle(ActVessel, 1).Run();
         new Countdown(5).Start();
     }
 
     public void LaunchUnit()
     {
-        ActVessel.Control.ActivateNextStage();
+        new SimpleStage(ActVessel).Run();
     }
 
     public void AscentUnit()
@@ -29,6 +30,15 @@ public class WacCorporalBoosted : Rocket,ILaunchable
 
     public void OrbitalUnit()
     {
+        // Not used
+    }
+
+    public void StartProcedure()
+    {
+        PrelaunchUnit();
+        LaunchUnit();
+        AscentUnit();
+        OrbitalUnit();
         Dispose();
     }
 }
